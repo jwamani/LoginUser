@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block title %} {% endblock %}
+</head>
+<body>
+    <div id="flash-messages"></div>
+    
+    {% block header %} {% endblock %}
+
+    <main>
+        {% block body %} {% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    {% block script %} {% endblock %}
+
+
+</body>
+</html>

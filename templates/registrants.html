@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Registrants Dashboard</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #111734, #4b95a2);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #logout-link {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .nav-links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>Registrants Table</h1>
+        <p>Welcome {{ username }}! This is your dashboard</p>
+        <div class="nav-links">
+            <a href="{{ url_for('logout') }}" id="logout-link">Logout</a>
+            <a href="{{ url_for('home_sport') }}">Register for Sport</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Year of Study</th>
+                    <th>Sport</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name in registrants %}
+                <tr>
+                    <td>{{ name.name }}</td>
+                    <td>{{ name.year }}</td>
+                    <td>{{ name.sport }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

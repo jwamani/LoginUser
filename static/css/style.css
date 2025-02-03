@@ -1,0 +1,44 @@
+
+
+table {
+    width: 100%;
+    border-collapse: collapse; /*Merge borders fr cleaner look*/
+    margin: 10% auto; /* Center the table*/
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    overflow: visible;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.9);
+}
+thead {
+    background-color: #4CAF50; /* Header background color*/
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+th, td {
+    border: 1px solid #000; /* Cell borders*/
+    padding: 11px; /* Cell padding*/
+    text-align: left;
+}
+tbody tr:nth-child(odd) {
+    background-color: #c79f9f; /*alternate row backdround color*/
+}
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+.flash-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.flash-message.success {
+    color: rgb(0, 255, 0);
+    /* background-color: #d4edda; */
+}
+.flash-message.error {
+    color: red;
+    /* background-color: #f8d7da; */
+}
+.flash-message.info {
+    color: #0c5460;
+}

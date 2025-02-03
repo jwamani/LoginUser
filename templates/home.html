@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Sports Registration</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #f3ec78, #af4261);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0.5rem 0;
+        }
+        h2 {
+            color: #4CAF50;
+            margin-top: 2rem;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            margin: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+{% endblock %}
+
+{% block header %}
+    <header>
+        <h1>Sports registration for Makerere University</h1>
+    </header>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Welcome to the Makerere 2025 Sports Edition Registration Portal</h2>
+        <p>Thank you for choosing to be part of our vibrant sports community. Whether you're here to compete, connect, or simply have fun, we're thrilled to have you join us.<br> This registration form is your first step towards an exciting journey filled with teamwork, growth, and unforgettable moments. Please take a moment to fill out the required fields with accurate information to ensure a seamless experience.</p>
+        <h2>Why join Us?</h2>
+        <ul>
+            <li>Access world-class sports facilities and coaching</li>
+            <li>Be part of a supportive and dynamic community</li>
+            <li>Enjoy a safe and inclusive environment for all athletes</li>
+        </ul>
+        <h2>How to register:</h2>
+        <ol>
+            <li>Fill in your name.</li>
+            <li>Select your preferred sport.</li>
+            <li>Select your year of study</li>
+        </ol>
+        <p>Let's make this season unforgettable - one game, one race, one goal at a time!</p>
+        <p>Register for sports: <a href="{{ url_for('home_sport') }}">register</a></p>
+        <p>Admin: <a href="{{ url_for('login') }}">log in</a></p>
+    </div>
+{% endblock %}

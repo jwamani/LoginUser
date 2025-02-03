@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block tite %}
+    <title>Sports Form</title>
+{% endblock %}
+
+{% block body %}
+
+    <h1>Register Page</h1> 
+    <form action="register_sport", method="post" id="register-form">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text" ><br>
+        
+        {% for sport in sports %}
+            <input id="sport" name="sport" type="radio" value="{{ sport }}">
+            <label for="sport">{{ sport }}</label> <br>
+        {% endfor %}
+    
+        <select name="year">
+            <option selected disabled value="">Year</option>
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Register</button>
+    </form>
+
+    <p>View Participants: <a id="view-registrants" href="{{ url_for('registrant') }}">Participants</a></p>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='js/sport.js') }}"></script>
+{% endblock %}
